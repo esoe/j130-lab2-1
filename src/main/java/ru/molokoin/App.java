@@ -1,6 +1,8 @@
 package ru.molokoin;
 
 import java.io.Console;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class App {
             }
         }
 
-        //
+        //получение сведений о продукте по id
         {
             int article = 3251615;
             // int article = 3251616;
@@ -45,8 +47,16 @@ public class App {
          * - цена из таблицы products (автоподстановка)
          * - количество указывает пользователь
          */
-        new FrameRegistration();
-        
+        CoverRequest request = new CoverRequest();
+        ControllerRegistration controller = new ControllerRegistration();
+        /**
+         * Заполнение полей request, которые берутся по умолчанию
+         * - id
+         * - created
+         * - position
+         * 
+         */
+        controller.preset(request);
     }
     /**
      * Ввод данных в консоли

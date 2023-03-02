@@ -1,7 +1,8 @@
 package ru.molokoin;
 
 import java.awt.*;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -13,32 +14,33 @@ import javax.swing.JTextField;
 public class FrameRegistration extends JFrame{
     private JLabel idLable;
     private JTextField idField;
-    private JLabel fioLable;
-    private JTextField fioField;
+    private JLabel createdLable;
+    private JTextField createdField;
+    private JLabel nameLable;
+    private JTextField nameField;
     private JLabel phoneLable;
     private JTextField phoneField;
     private JLabel mailLable;
     private JTextField mailField;
-    private JLabel adresLable;
-    private JTextField adresField;
-    private JLabel createdLable;
-    private JTextField createdField;
+    private JLabel addressLable;
+    private JTextField addressField;
     private JLabel positionLable;
     private JTextField positionField;
-    private JButton addPosition;
+    private JButton addPositionButton;
     
     public FrameRegistration(){
-        //Create and set up the window.
+        //Создание и настройка окна.
         setTitle("Регистрация заказа");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
+        // инициализация и настройка элементов интерфейса
         idLable = new JLabel("ID: ");
         idLable.setPreferredSize(new Dimension(60, 20));
         idField = new JTextField(20);
 
-        fioLable = new JLabel("name: " + "     ");
-        fioLable.setPreferredSize(new Dimension(60, 20));
-        fioField = new JTextField(20);
+        nameLable = new JLabel("name: " + "     ");
+        nameLable.setPreferredSize(new Dimension(60, 20));
+        nameField = new JTextField(20);
         
         phoneLable = new JLabel("phone: " + "    ");
         phoneLable.setPreferredSize(new Dimension(60, 20));
@@ -48,9 +50,9 @@ public class FrameRegistration extends JFrame{
         mailLable.setPreferredSize(new Dimension(60, 20));
         mailField = new JTextField(20);
         
-        adresLable = new JLabel("adres: " + "     ");
-        adresLable.setPreferredSize(new Dimension(60, 20));
-        adresField = new JTextField(20);
+        addressLable = new JLabel("adres: " + "     ");
+        addressLable.setPreferredSize(new Dimension(60, 20));
+        addressField = new JTextField(20);
         
         createdLable = new JLabel("created: " + " ");
         createdLable.setPreferredSize(new Dimension(60, 20));
@@ -60,13 +62,12 @@ public class FrameRegistration extends JFrame{
         positionLable.setPreferredSize(new Dimension(60, 20));
         positionField = new JTextField(20);
         
-        
-        // fioLable.setPreferredSize(new Dimension(175, 100));
+        // компановка графических элементов
         getContentPane().add(inputpane(), BorderLayout.CENTER);
-        addPosition = new JButton("Добавить к заказу ...");
-        getContentPane().add(addPosition, BorderLayout.SOUTH);
+        addPositionButton = new JButton("Добавить к заказу ...");
+        getContentPane().add(addPositionButton, BorderLayout.SOUTH);
  
-        //Display the window.
+        //отображение окна
         pack();
         setVisible(true);
         
@@ -89,23 +90,68 @@ public class FrameRegistration extends JFrame{
     }
     /**
      * Формируем панель ввода данных
-     * - добавляем панели строк
+     * - добавляем панели строк (minipanes)
      * @return
      */
     public JPanel inputpane(){
         JPanel pane = new JPanel();
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
         pane.add(minipane(idLable, idField));
-        pane.add(minipane(fioLable, fioField));
-        pane.add(minipane(phoneLable, phoneField));
+        pane.add(minipane(nameLable, nameField));
         pane.add(minipane(phoneLable, phoneField));
         pane.add(minipane(mailLable, mailField));
-        pane.add(minipane(adresLable, adresField));
+        pane.add(minipane(addressLable, addressField));
         pane.add(minipane(createdLable, createdField));
         pane.add(minipane(positionLable, positionField));
         return pane;
     }
-    public static void main(String[] args) {
-        new FrameRegistration();
+    /**
+     * @return the idField
+     */
+    public JTextField getIdField() {
+        return idField;
+    }
+    /**
+     * @return the fioField
+     */
+    public JTextField getNameField() {
+        return nameField;
+    }
+    /**
+     * @return the phoneField
+     */
+    public JTextField getPhoneField() {
+        return phoneField;
+    }
+    /**
+     * @return the mailField
+     */
+    public JTextField getMailField() {
+        return mailField;
+    }
+    /**
+     * @return the adresField
+     */
+    public JTextField getAddressField() {
+        return addressField;
+    }
+    /**
+     * @return the createdField
+     */
+    public JTextField getCreatedField() {
+        return createdField;
+    }
+    /**
+     * @return the positionField
+     */
+    public JTextField getPositionField() {
+        return positionField;
+    }
+
+    /**
+     * @return the addPositionButton
+     */
+    public JButton getAddPositionButton() {
+        return addPositionButton;
     }
 }
