@@ -11,8 +11,6 @@ public class ControllerRegistration {
     }
     public void preset(CoverRequest request){
         request.setId(0);
-
-
         // создание формы с заполненными предустановленными полями 
         init(request);
     }
