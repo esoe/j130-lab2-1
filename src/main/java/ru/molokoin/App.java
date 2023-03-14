@@ -1,8 +1,6 @@
 package ru.molokoin;
 
 import java.io.Console;
-import java.util.ArrayList;
-import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -47,8 +45,9 @@ public class App {
          * - цена из таблицы products (автоподстановка)
          * - количество указывает пользователь
          */
-        CoverRequest request = new CoverRequest();
+        //CoverRequest request = new CoverRequest();
         ControllerRegistration controller = new ControllerRegistration();
+        controller.init();
         /**
          * Заполнение полей request, которые берутся по умолчанию
          * - id
@@ -56,7 +55,8 @@ public class App {
          * - position
          * 
          */
-        controller.preset(request);
+        //controller.preset(request);
+
     }
     /**
      * Ввод данных в консоли

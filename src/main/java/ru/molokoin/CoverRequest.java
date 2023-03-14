@@ -14,10 +14,7 @@ public class CoverRequest {
     private String position;
     private Date delivery;
     private List<CoverPosition> positions;
-    public CoverRequest(){
-        this(null, null, null, null);
-    }
-
+    
     public CoverRequest(String name, String phone, String mail, String address){
         setId(Repository.getNewRequestID());
         setCreated(new Date());//в обложке лучше хранить строку

@@ -26,7 +26,8 @@ public class FrameRegistration extends JFrame{
     private JTextField addressField;
     private JLabel positionLable;
     private JTextField positionField;
-    private JButton addPositionButton;
+    private JButton saveAndCloseButton;
+    private JButton wishlisButton;
     
     public FrameRegistration(){
         //Создание и настройка окна.
@@ -64,8 +65,12 @@ public class FrameRegistration extends JFrame{
         
         // компановка графических элементов
         getContentPane().add(inputpane(), BorderLayout.CENTER);
-        addPositionButton = new JButton("Добавить к заказу ...");
-        getContentPane().add(addPositionButton, BorderLayout.SOUTH);
+        saveAndCloseButton = new JButton("save & close");
+        getContentPane().add(saveAndCloseButton, BorderLayout.SOUTH);
+
+        wishlisButton = new JButton("WISHLIST");
+        getContentPane().add(wishlisButton, BorderLayout.NORTH);
+
  
         //отображение окна
         pack();
@@ -149,9 +154,15 @@ public class FrameRegistration extends JFrame{
     }
 
     /**
-     * @return the addPositionButton
+     * @return the wishlisButton
      */
-    public JButton getAddPositionButton() {
-        return addPositionButton;
+    public JButton getWishlisButton() {
+        return wishlisButton;
+    }
+    /**
+     * @return the saveAndCloseButton
+     */
+    public JButton getSaveAndCloseButton() {
+        return saveAndCloseButton;
     }
 }
