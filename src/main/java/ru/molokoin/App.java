@@ -1,6 +1,8 @@
 package ru.molokoin;
 
 import java.io.Console;
+import java.util.HashMap;
+import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
@@ -45,18 +47,31 @@ public class App {
          * - цена из таблицы products (автоподстановка)
          * - количество указывает пользователь
          */
-        //CoverRequest request = new CoverRequest();
-        ControllerRegistration controller = new ControllerRegistration();
-        controller.init();
-        /**
-         * Заполнение полей request, которые берутся по умолчанию
-         * - id
-         * - created
-         * - position
-         * 
-         */
-        //controller.preset(request);
+        {
+            //данные заказчика
+            String name = "ФИО Заказчика";
+            int phone = 1234567;
+            String mail = "some@mail.domain";
+            String address = "Адрес доставки";
+            // данные продукта 
+            Map<Integer, Integer> needs = new HashMap<Integer, Integer>();
+            
+            int article = 3251615;// подумать как указать несколько артикулов
+            int count = 1;
+            needs.put(article, count);
 
+            article = 3251616;
+            count = 2;
+            needs.put(article, count);
+            /**
+             * Доступные артикулы продуктов:
+             * - 3251617
+             * - 3251619
+             * - 3251620
+             * TODO добавление заказа не уменьшает кличество продукции на складе
+             */
+            Repository.addRequest(name, phone, mail, address, needs);
+        }
     }
     /**
      * Ввод данных в консоли

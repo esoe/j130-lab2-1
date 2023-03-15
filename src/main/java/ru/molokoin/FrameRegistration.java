@@ -1,8 +1,6 @@
 package ru.molokoin;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -32,7 +30,7 @@ public class FrameRegistration extends JFrame{
     public FrameRegistration(){
         //Создание и настройка окна.
         setTitle("Регистрация заказа");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
  
         // инициализация и настройка элементов интерфейса
         idLable = new JLabel("ID: ");

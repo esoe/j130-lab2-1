@@ -9,6 +9,7 @@ public class ControllerRegistration {
     private FrameRegistration frame;
     private CoverRequest request;
     private List<CoverPosition> positions;
+    private ControllerWishlist controllerWishlist;
 
     public ControllerRegistration(){
         String name = "";//указывает пользователь
@@ -47,6 +48,13 @@ public class ControllerRegistration {
             public void actionPerformed(ActionEvent e) {
                 //открываем окно добавления новых позиций в заказ
                 System.out.println("Показать позиции заказа и добавить новые ...");
+                /**
+                 * Передаем в форму список позиций заказа, для отображения в таблице
+                 * (при первом запуске список пуст)
+                 * - аналогично создаем новый контроллер, который будет инициировать форму окна
+                 * - 
+                 */
+                controllerWishlist = new ControllerWishlist(positions);
             }
         });
 
@@ -56,7 +64,7 @@ public class ControllerRegistration {
         frame.getSaveAndCloseButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Сохранить данные заказчика и позичии его заказа и выйти ...");
+                System.out.println("Сохранить данные заказчика, позиции его заказа и выйти ...");
             }
         });
     }
