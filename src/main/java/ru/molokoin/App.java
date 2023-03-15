@@ -16,12 +16,7 @@ public class App {
         //получение сведений о продукте по id
         {
             int article = 3251615;
-            // int article = 3251616;
-            // int article = 3251617;
-            // int article = 3251619;
-            // int article = 3251620;
             System.out.println("Продукт (products) по article : " + article + " ...");
-            //System.out.println(Repository.getProductByArticle(article).toString());
             CoverProduct cp = Repository.getProductByArticle(article);
             System.out.println(cp.getDesign() + "\t" + cp.getColor());
         }
@@ -74,7 +69,7 @@ public class App {
         }
     }
     /**
-     * Ввод данных в консоли
+     * Ввод данных в консоли : не потребовалось
      * @return input
      */
     public static String input(){

@@ -62,10 +62,4 @@ public class Access {
     public String getPassword() {
         return password;
     }
-    public static void main(String[] args) {
-        Access acc = new Access("property\\access.prop");
-        System.out.println(acc.getLink());
-        System.out.println(acc.getLogin());
-        System.out.println(acc.getPassword());
-    }
 }
