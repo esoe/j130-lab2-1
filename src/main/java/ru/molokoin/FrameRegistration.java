@@ -1,6 +1,7 @@
 package ru.molokoin;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.BorderLayout;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
